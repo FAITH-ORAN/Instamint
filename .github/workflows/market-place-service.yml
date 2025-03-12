@@ -1,0 +1,120 @@
+name: Marketplace-service
+
+on:
+  push:
+    branches: ['main', 'develop']
+  pull_request:
+    branches: ['main', 'develop']
+
+jobs:
+  eslint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: cd ./marketplace-service && npm install
+
+      - name: Run ESLint
+        run: cd ./marketplace-service && npm run lint
+
+  jest:
+    name: Run Jest tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
+          POSTGRES_DB: marketplacedb
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Set environment variables
+        run: echo "URL_APPLICATION=http://localhost:4007" >> $GITHUB_ENV
+
+      - name: Set database URL
+        run: echo "DATABASE_URL=postgresql://testuser:testpassword@localhost:5432/marketplacedb" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: cd ./marketplace-service && npm install
+
+      - name: Apply database migrations
+        run: cd ./marketplace-service && npx prisma migrate deploy
+
+      - name: Seed database with test data
+        run: cd ./marketplace-service && node seed.js
+
+      - name: Run Jest tests
+        run: cd ./marketplace-service && npm test
+
+  snyk-scan:
+    name: Run Snyk to Check for Vulnerabilities
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: cd ./marketplace-service && npm install
+
+      - name: Run Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: cd ./marketplace-service && npx snyk test || true
+
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: [eslint, jest, snyk-scan]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in to Azure Container Registry
+        run: |
+          echo ${{ secrets.AZURE_REGISTRY_PASSWORD }} | docker login ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io -u ${{ secrets.AZURE_REGISTRY_USERNAME }} --password-stdin
+
+      - name: Build and push Docker image
+        env:
+          AZURE_REGISTRY_NAME: ${{ secrets.AZURE_REGISTRY_NAME }}
+        run: |
+          docker buildx build --push --tag ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io/marketplace:latest --file ./marketplace-service/Dockerfile ./marketplace-service

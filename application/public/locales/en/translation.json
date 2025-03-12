@@ -1,0 +1,172 @@
+{
+  "loginForm": {
+    "signin": "Sign in",
+    "signup": "Sign up",
+    "forgotPassword": "Forgot Password",
+    "errorMessage": "An error occurred while connecting. Try Again.",
+    "email": "Email",
+    "password": "Password",
+    "otp": "Verify the code",
+    "checkOtp": "Enter the code"
+  },
+  "registerForm": {
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "signup": "Sign up",
+    "errorMessage": "An error occurred while connecting. Try Again."
+  },
+  "resetPasswordForm": {
+    "password": "Password",
+    "newPassword": "New password",
+    "reset": "Reset",
+    "errorMessage": "An error occurred while connecting. Try Again."
+  },
+  "uploadContent": {
+    "fileType": "File type not allowed",
+    "descFileType": "Only png, webp, ogg, flac, h.264 types are allowed.",
+    "fileSize": "File must not exceed 1GB.",
+    "descFileSize": "File must not exceed 1GB.",
+    "uploadSuccess": "Upload Successful",
+    "uploadFailed": "Upload Failed",
+    "loading": "Loading",
+    "accDenied": "Access Denied",
+    "titleUploadPage": "Store your creations",
+    "labelUpload": "Upload a file",
+    "descAllowdFile": "Accepted file types: png, webp, ogg, flac, h.264. Max 1GB",
+    "btnUpload": "Upload File",
+    "btnNewUpload": "New Upload",
+    "fileRequired": "File is required",
+    "fileExist": "File already exist",
+    "termsMustAccept": "You must accept the terms and conditions",
+    "acceptTermsLabel": "I accept the terms and conditions",
+    "termsNotAccepted": "You must accept the terms and conditions"
+  },
+  "profileAvatar": {
+    "username": "Username"
+  },
+  "ProfileBadges": {
+    "edit": "Edit",
+    "shareProfile": "Share profile",
+    "Add": "Add"
+  },
+  "verify": {
+    "title": "Verify Your Email Address",
+    "subtitle": "We've sent an email to",
+    "description": "To verify your email address and active your account. The link in the email will expire in 24 hours"
+  },
+  "activationSuccess": {
+    "title": "Email Verification Successful",
+    "description": "Congratulations! Your email address has been successfullyverified. You can now access all the features of our platform.Thank you for signing up!",
+    "ressourceNotFound": "Resource not found",
+    "internalError": "Internal server error",
+    "activationError": "User activation error"
+  },
+  "profile": {
+    "edit": {
+      "username": "Username",
+      "save": "Save",
+      "error": "An error has occurred"
+    }
+  },
+  "getAndDeleteContent": {
+    "title": "List of Uploaded Content",
+    "errorGetContent": "Failed to retrieve contents",
+    "btnSeeAll": "View My Content",
+    "noId": "Content ID missing",
+    "deletingSuccess": "Content deleted successfully",
+    "delatingFailed": "Failed to delete content",
+    "tableHeadMiniature": "Thumbnail",
+    "tableHeadType": "Type",
+    "tableHeadUploadDate": "Upload Date",
+    "tableHeadAction": "Actions",
+    "btnDraft": "Draft",
+    "btnMint": "Mint",
+    "tableHeadUStatus": "Status"
+  },
+  "profileVisibility": {
+    "visibility": "Visibility",
+    "warning": "All pending follow requests will be automatically accepted"
+  },
+  "draftContent": {
+    "description": "Fill out the form to create a draft. Make sure all required fields are valid.",
+    "descriptionPlaceholder": "Description",
+    "hashtagsPlaceholder": "Hashtags",
+    "locationPlaceholder": "Location",
+    "saveDraft": "Save Draft",
+    "statusDraft": "Draft",
+    "statusUploded": "Uploaded",
+    "statusMint": "NFT",
+    "dialogDescription": "Description",
+    "dialogTitle": "Create Draft",
+    "editDraftTitle": "Edit Draft",
+    "maxHashtags": "Maximum 5 hashtags",
+    "descriptionNoMentionsOrHashtags": "Description cannot contain mentions or hashtags",
+    "authorNameRequired": "Author name is required",
+    "noSpecialCharacters": "No special characters allowed",
+    "descriptionRequired": "Description is required",
+    "descriptionLength": "Description length must be less than or equal to 500",
+    "draftListPageTitle": "List of Drafts",
+    "draftSaveSuccess": "Draft saved successfully!",
+    "draftSaveError": "Failed to save draft"
+  },
+  "nft": {
+    "nftModalHeader": "Select a Marketplace to Mint and Sell Your NFT",
+    "nftModalClose": "Close",
+    "nftModalConfirm": "Confirm",
+    "mintFee": "Fee",
+    "nftMintSuccess": "NFT minted successfully! ",
+    "nftMintError": "Error minting NFT: "
+  },
+  "changeEmail": {
+    "changed": "Your email has been changed"
+  },
+  "changeEmailForm" : {
+    "send" : "Change email",
+    "alert" : "An email has been sent"
+  },
+  "changePasswordForm" : {
+    "send" : "Password has been changed",
+    "alert" : "Change password"
+  },
+  "setting" :{
+    "title" : "Change Email Address",
+    "information" : "Account information"
+  },
+  "settings": {
+    "error": "An error has occurred",
+    "title": "Account Security",
+    "subtitle": "2FA Two Factor Authentication",
+    "enable": "Enable 2FA",
+    "disable": "Disable 2FA",
+    "changeTwoFa" : "I want to enable two-factor authentication",
+    "changeEmail": "I want to change the email address",
+    "changePasswordButton": "Change password",
+    "changePassword": "I want to change my password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password"
+  },
+  "signinPage" : {
+    "login" : "Sign in"
+  },
+  "signupPage" : {
+    "signup" : "Sign up"
+  },
+  "editProfilePage": {
+    "title": "Edit my profile",
+    "change": "I want to change my profile",
+    "visiblity": "I want to change the visibility of my profile"
+  },
+  "resetPassword": {
+    "title": "Reset request"
+  },
+  "marketPlace": {
+    "notAvailableStatus": "Not available",
+    "report": "Report",
+    "seller": "Seller",
+    "marketplace": "Marketplace",
+    "status": "Status",
+    "price": "Price"
+  }
+}

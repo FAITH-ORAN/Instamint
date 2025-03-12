@@ -1,0 +1,172 @@
+{
+  "loginForm": {
+    "signin": "Conexión",
+    "signup": "Inscribirse",
+    "forgotPassword": "Contraseña olvidada",
+    "errorMessage": "Se produjo un error al conectarse. Intentar otra vez.",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "otp": "Verificar el código",
+    "checkOtp": "Introduzca el código"
+  },
+  "registerForm": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "username": "Nombre de userario",
+    "signup": "Inscribirse",
+    "errorMessage": "Se produjo un error al conectarse. Intentar otra vez."
+  },
+  "resetPasswordForm": {
+    "password": "Contraseña",
+    "newPassword": "Nueve contraseña",
+    "reset": "Reiniciar",
+    "errorMessage": "Se produjo un error al conectarse. Intentar otra vez."
+  },
+  "uploadContent": {
+    "fileType": "Tipo de archivo no permitido",
+    "descFileType": "Solo se permiten los tipos png, webp, ogg, flac, h.264.",
+    "fileSize": "El archivo no debe exceder 1GB.",
+    "descFileSize": "El archivo no debe exceder 1GB.",
+    "uploadSuccess": "Carga Exitosa",
+    "uploadFailed": "Carga Fallida",
+    "loading": "Cargando",
+    "accDenied": "Acceso Denegado",
+    "titleUploadPage": "Almacene sus creaciones",
+    "labelUpload": "Subir un archivo",
+    "descAllowdFile": "Tipos de archivos aceptados: png, webp, ogg, flac, h.264. Máximo 1GB",
+    "btnUpload": "Subir Archivo",
+    "btnNewUpload": "Subir otro archivo",
+    "fileRequired": "Se requiere un archivo",
+    "fileExist": "El archivo ya existe",
+    "termsMustAccept": "Debe aceptar los términos y condiciones",
+    "acceptTermsLabel": "Acepto los términos y condiciones",
+    "termsNotAccepted": "Los términos y condiciones no han sido aceptados"
+  },
+  "profileAvatar": {
+    "username": "Userario"
+  },
+  "ProfileBadges": {
+    "edit": "Editar",
+    "shareProfile": "Compartir perfil",
+    "Add": "Agregar"
+  },
+  "getAndDeleteContent": {
+    "title": "Lista de Contenido Subido",
+    "errorGetContent": "Fallo al recuperar los contenidos",
+    "btnSeeAll": "Ver Mi Contenido",
+    "noId": "Falta el ID del contenido",
+    "deletingSuccess": "Contenido eliminado con éxito",
+    "delatingFailed": "Fallo al eliminar el contenido",
+    "tableHeadMiniature": "Miniatura",
+    "tableHeadType": "Tipo",
+    "tableHeadUploadDate": "Fecha de subida",
+    "tableHeadAction": "Acciones",
+    "btnDraft": "Borrador",
+    "btnMint": "Mint",
+    "tableHeadUStatus": "Estado"
+  },
+  "verify": {
+    "title": "Verifique su dirección de correo electrónico",
+    "subtitle": "Hemos enviado un correo electrónico a",
+    "description": "Para verificar su dirección de correo electrónico y activar su cuenta. El enlace del correo electrónico caducará en 24 horas."
+  },
+  "activationSuccess": {
+    "title": "Verificación de correo electrónico correcta",
+    "description": "Enhorabuena. Su dirección de correo electrónico ha sido verificada correctamente. Ahora puede acceder a todas las funciones de nuestra plataforma.",
+    "ressourceNotFound": "Recurso no encontrado",
+    "internalError": "Error interno del servidor",
+    "activationError": "Error de activación de usuario"
+  },
+  "profile": {
+    "edit": {
+      "username": "Userario",
+      "save": "Ahorrar",
+      "error": "Se ha producido un error"
+    }
+  },
+  "profileVisibility": {
+    "visibility": "Visibilidad",
+    "warning": "Todas las solicitudes de seguimiento pendientes serán aceptadas automáticamente"
+  },
+  "draftContent": {
+    "description": "Complete el formulario para crear un borrador. Asegúrese de que todos los campos requeridos sean válidos.",
+    "descriptionPlaceholder": "Descripción",
+    "hashtagsPlaceholder": "Hashtags",
+    "locationPlaceholder": "Ubicación",
+    "saveDraft": "Guardar borrador",
+    "statusDraft": "Borrador",
+    "statusUploded": "Subido",
+    "statusMint": "NFT",
+    "dialogDescription": "Description",
+    "dialogTitle": "Crear un borrador",
+    "editDraftTitle": "Editar borrador",
+    "maxHashtags": "Máximo 5 hashtags",
+    "descriptionNoMentionsOrHashtags": "La descripción no debe contener menciones ni hashtags",
+    "authorNameRequired": "El nombre del autor es obligatorio",
+    "noSpecialCharacters": "No se permiten caracteres especiales",
+    "descriptionRequired": "La descripción es obligatoria",
+    "descriptionLength": "La descripción no debe exceder los 500 caracteres",
+    "draftListPageTitle": "Lista de borradores",
+    "draftSaveSuccess": "Borrador guardado con éxito",
+    "draftSaveError": "Error al guardar el borrador"
+  },
+  "nft": {
+    "nftModalHeader": "Seleccione un mercado para acuñar y vender su NFT",
+    "nftModalClose": "Cerrar",
+    "nftModalConfirm": "Confirmar",
+    "mintFee": "Tarifa",
+    "nftMintSuccess": "¡NFT minteado con éxito!",
+    "nftMintError": "Error al mintear el NFT: "
+  },
+  "changeEmail": {
+    "changed": "Tu correo electrónico ha sido cambiado."
+  },
+  "changeEmailForm": {
+    "send": "Cambiar e-mail",
+    "alert": "Se envió un correo electrónico"
+  },
+  "changePasswordForm" : {
+    "send" : "Se ha cambiado la contraseña",
+    "alert" : "Cambiar contraseña"
+  },
+  "setting" :{
+    "emailchange" : "Editar correo electrónico",
+    "information" : "Información de la cuenta"
+  },
+  "settings": {
+    "error": "Se ha producido un error",
+    "title": "Seguridad de la cuenta",
+    "subtitle": "2FA Autenticación de dos factores",
+    "enable": "Activar la 2FA",
+    "disable": "Desactivar la 2FA",
+    "changeTwoFa" : "Quiero habilitar la autenticación de dos factores",
+    "changeEmail": "Quiero cambiar la dirección de correo electrónico",
+    "changePassword": "Quiero cambiar mi contraseña",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "changePasswordButton": "Cambiar contraseña",
+    "confirmPassword": "Confirmar contraseña"
+  },
+  "signinPage": {
+    "login": "Connection"
+  },
+  "signupPage": {
+    "signup": "Inscribe"
+  },
+  "editProfilePage": {
+    "title": "Editar mi perfil",
+    "change": "Quiero cambiar mi perfil",
+    "visiblity": "Quiero cambiar la visibilidad de mi perfil."
+  },
+  "resetPassword": {
+    "title": "Solicitud de reinicio"
+  },
+  "marketPlace": {
+    "notAvailableStatus": "No disponible",
+    "report": "Reportar",
+    "seller": "Vendedor",
+    "marketplace": "Mercado",
+    "status": "Estado",
+    "price": "Precio"
+  }
+}

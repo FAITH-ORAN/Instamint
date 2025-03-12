@@ -1,0 +1,25 @@
+{
+    "name": "Instamint",
+    "short_name": "Instamint",
+    "icons": [
+      {
+        "src": "logo.svg",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo.svg",
+        "sizes": "384x384"
+      },
+      {
+        "src": "logo-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+  }

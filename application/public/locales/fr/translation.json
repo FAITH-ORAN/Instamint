@@ -1,0 +1,172 @@
+{
+  "loginForm": {
+    "signin": "Connexion",
+    "signup": "S'inscrire",
+    "forgotPassword": "Mot de passe oublié",
+    "errorMessage": "Une erreur s'est produite lors de la connexion. Veuillez réessayer.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "otp": "Vérifier le code",
+    "checkOtp": "Saisir le code"
+  },
+  "registerForm": {
+    "email": "Email",
+    "password": "Mot de passe",
+    "username": "Nom d'utilisateur",
+    "signup": "S'inscrire",
+    "errorMessage": "Une erreur s'est produite lors de la connexion. Veuillez réessayer."
+  },
+  "resetPasswordForm": {
+    "password": "Mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "reset": "Réinitialiser",
+    "errorMessage": "Une erreur s'est produite lors de la connexion. Veuillez réessayer."
+  },
+  "uploadContent": {
+    "fileType": "Type de fichier non autorisé",
+    "descFileType": "Seuls les types png, webp, ogg, flac, h.264 sont autorisés.",
+    "fileSize": "Le fichier ne doit pas dépasser 1GB.",
+    "descFileSize": "Le fichier ne doit pas dépasser 1GB.",
+    "uploadSuccess": "Upload Réussi",
+    "uploadFailed": "Upload échoué",
+    "loading": "Chargement",
+    "accDenied": "Accès interdit",
+    "titleUploadPage": "Stockez vos créations",
+    "labelUpload": "Téléchargez un fichier",
+    "descAllowdFile": "Types de fichiers acceptés: png, webp, ogg, flac, h.264. Max 1GB",
+    "btnUpload": "Upload fichier",
+    "btnNewUpload": "Upload un nouveau fichier",
+    "fileRequired": "Fichier requis",
+    "fileExist": "Le fichier existe déjà",
+    "termsMustAccept": "Vous devez accepter les conditions d'utilisation",
+    "acceptTermsLabel": "J'accepte les conditions d'utilisation",
+    "termsNotAccepted": "Vous devez accepter les conditions d'utilisation"
+  },
+  "profileAvatar": {
+    "username": "Pseudo"
+  },
+  "ProfileBadges": {
+    "edit": "Modifier",
+    "shareProfile": "Partager le profil",
+    "Add": "Ajouter"
+  },
+  "getAndDeleteContent": {
+    "title": "Liste du contenu téléchargé",
+    "errorGetContent": "Échec de la récupération des contenus",
+    "btnSeeAll": "Voir mon contenus",
+    "noId": "ID du contenu manquant",
+    "deletingSuccess": "Contenu supprimé avec succès",
+    "delatingFailed": "Échec de la suppression du contenu",
+    "tableHeadMiniature": "Miniature",
+    "tableHeadType": "Type",
+    "tableHeadUploadDate": "Date d'upload",
+    "tableHeadAction": "Actions",
+    "btnDraft": "Brouillon",
+    "btnMint": "Minté",
+    "tableHeadUStatus": "Statut"
+  },
+  "verify": {
+    "title": "Vérification de l'e-mail réussie",
+    "subtitle": "Nous avons envoyé un courriel à",
+    "description": "Pour vérifier votre adresse électronique et activer votre compte. Le lien contenu dans l'e-mail expirera dans 24 heures."
+  },
+  "activationSuccess": {
+    "title": "Vérification de l'e-mail réussie",
+    "description": "Félicitations ! Votre adresse électronique a été vérifiée avec succès. Vous pouvez maintenant accéder à toutes les fonctionnalités de notre plateforme.",
+    "ressourceNotFound": "Ressource non trouvée",
+    "internalError": "Erreur interne du serveur",
+    "activationError": "Erreur d'activation de l'utilisateur"
+  },
+  "profile": {
+    "edit": {
+      "username": "Nom d'utilisateur",
+      "save": "Enregistrer",
+      "error": "Une erreur est survenue"
+    }
+  },
+  "profileVisibility": {
+    "visibility": "Visibilité",
+    "warning": "Toutes les demandes de suivi en attente seront automatiquement acceptées"
+  },
+  "draftContent": {
+    "description": "Remplissez le formulaire pour créer un brouillon. Assurez-vous que tous les champs requis sont valides.",
+    "descriptionPlaceholder": "Description",
+    "hashtagsPlaceholder": "Hashtag",
+    "locationPlaceholder": "Localisation",
+    "saveDraft": "Sauvegarder",
+    "statusDraft": "Brouillon",
+    "statusUploded": "Téléchargé",
+    "statusMint": "NFT",
+    "dialogDescription": "Description",
+    "dialogTitle": "Créer un brouillon",
+    "editDraftTitle": "Modifier le brouillon",
+    "maxHashtags": " Maximum 5 hashtags",
+    "descriptionNoMentionsOrHashtags": "La description ne doit pas contenir de mentions ou de hashtags",
+    "authorNameRequired": "Le nom de l'auteur est obligatoire",
+    "noSpecialCharacters": "Pas de caractères spéciaux",
+    "descriptionRequired": "La description est obligatoire",
+    "descriptionLength": "Maximum 500 caractères",
+    "draftListPageTitle": "Liste de contenu brouillon",
+    "draftSaveSuccess": "Brouillon enregistré avec succès",
+    "draftSaveError": "Erreur lors de l'enregistrement du brouillon"
+  },
+  "nft": {
+    "nftModalHeader": "Sélectionnez un marché pour minter et vendre votre NFT",
+    "nftModalClose": "Fermer",
+    "nftModalConfirm": "Confirmer",
+    "mintFee": "Frais",
+    "nftMintSuccess": "NFT minté avec succès!",
+    "nftMintError": "Erreur lors du minting du NFT : "
+  },
+  "changeEmail" : {
+    "changed" : "Votre email a été changé"
+  },
+  "changeEmailForm" : {
+    "send" : "L'email a bien été changé",
+    "alert" : "Changer l'email"
+  }, 
+  "changePasswordForm" : {
+    "send" : "Le mot de passe a bien été changer",
+    "alert" : "Changer le mot de passe"
+  },
+  "setting" : {
+    "title" : "Modifier l'e-mail",
+    "information" : "Information du compte"
+  },
+  "settings": {
+    "error": "Une erreur est survenue",
+    "title": "Sécurité du compte",
+    "subtitle": "2FA Authentification à deux facteurs",
+    "enable": "Activer le 2FA",
+    "disable": "Désactiver le 2FA",
+    "changeTwoFa" : "Je veux activer le double authentification",
+    "changeEmail": "Je veux changer l'adresse email",
+    "changePasswordButton": "Changer le mot de passe",
+    "changePassword": "Je veux changer mon mot de passe",
+    "currentPassword": "Mot de Passe Actuelle",
+    "newPassword" : "Nouveau Mot de Passe",
+    "confirmPassword": "Confirmation Mot de Passe"
+  },
+  "signinPage": {
+    "login": "Connexion"
+  },
+  "signupPage": {
+    "signup": "S'inscrire"
+  },
+  "editProfilePage" : {
+    "title" : "Modifier mon profil",
+    "change" : "Je veux changer mon profil",
+    "visiblity" : "Je veux changer la visibilité de mon profil"
+  },
+  "resetPassword" : {
+    "title" : "Demande de réinitialisation"
+  },
+  "marketPlace": {
+    "notAvailableStatus": "Non disponible",
+    "report": "Signaler",
+    "seller": "Vendeur",
+    "marketplace": "Marché",
+    "status": "Statut",
+    "price": "Prix"
+  }
+}

@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model NFTMarket {
+  id              Int       @id @default(autoincrement())
+  nftId           Int       @unique
+  sellerId        Int
+  buyerId         Int?
+  status          String    @default("listed") // "listed", "available", "sold", "trading", "pending", "removed"
+  price           Float?
+  marketplaceName String    
+  contentUrl      String    // URL of the NFT content
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @updatedAt
+
+  // Relations
+  tradeProposals  Trade[]   @relation("NFTMarketTrade")
+}
+
+model Trade {
+  id              Int       @id @default(autoincrement())
+  NFTMarketId     Int
+  proposedById    Int
+  proposedToId    Int
+  nftOfferedId    Int
+  nftRequestedId  Int
+  status          String    @default("pending") // "pending", "accepted", "rejected"
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @updatedAt
+
+  // Relations
+  nftMarket       NFTMarket @relation(fields: [NFTMarketId], references: [id], name: "NFTMarketTrade")
+}

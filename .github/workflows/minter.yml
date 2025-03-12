@@ -1,0 +1,137 @@
+name: Minters Service
+
+on:
+  push:
+    branches: ['main', 'develop']
+  pull_request:
+    branches: ['main', 'develop']
+
+jobs:
+  eslint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: cd ./minters && npm install
+
+      - name: Run ESLint
+        run: cd ./minters && npm run lint
+
+  jest:
+    name: Run Jest Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: cd ./minters && npm install
+
+      - name: Run Jest tests
+        run: cd ./minters && npm test
+
+  snyk-scan:
+    name: Run Snyk to Check for Vulnerabilities
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: cd ./minters && npm install
+
+      - name: Run Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: cd ./minters && npx snyk test || true
+
+  build-and-push:
+    name: Build and Push to Azure Container Registry
+    runs-on: ubuntu-latest
+    needs: [eslint, jest, snyk-scan]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in to Azure Container Registry
+        run: |
+          echo ${{ secrets.AZURE_REGISTRY_PASSWORD }} | docker login ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io -u ${{ secrets.AZURE_REGISTRY_USERNAME }} --password-stdin
+
+      - name: Build and push Docker image
+        env:
+          AZURE_REGISTRY_NAME: ${{ secrets.AZURE_REGISTRY_NAME }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL_MINTER }}
+        run: |
+          docker buildx build --push --tag ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io/minters:latest --file ./minters/Dockerfile ./minters
+
+  apply-db-migrations:
+    name: Apply Database Migrations for Production
+    runs-on: ubuntu-latest
+    needs: [build-and-push]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set environment variables for Minters Service
+        run: echo "DATABASE_URL=${{ secrets.DATABASE_URL_MINTER }}" >> $GITHUB_ENV
+
+      - name: Apply Minters Service database migrations
+        run: |
+          cd ./minters
+          npx prisma migrate deploy
+
+      - name: Generate Minters Service Prisma Client
+        run: |
+          cd ./minters
+          npx prisma generate
+
+  deploy:
+    name: Deploy to Azure Web App
+    runs-on: ubuntu-latest
+    needs: [apply-db-migrations]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: minterAppService
+          images: ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io/minters:latest
